@@ -1,12 +1,11 @@
-// import { mount } from 'marketing/app';
-import Landing from 'marketing/Landing';
+import mount from 'marketing/MarketingApp';
 import React, { useRef, useEffect } from 'react';
 export default () => {
     const ref = useRef(null);
 
     useEffect(() => {
-        // mount(ref.current);
+        mount(ref.current);
     });
 
-    return <div ref={ref}><Landing /></div>
+    return <div ref={ref}></div>
 }
