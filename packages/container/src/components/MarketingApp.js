@@ -1,12 +1,12 @@
-// import { mount } from 'marketing/app';
+import { mount } from 'marketing/app';
 import React, { useRef, useEffect } from 'react';
-// console.log(mount);
+console.log(mount);
 export default () => {
     const ref = useRef(null);
 
-    // useEffect(() => {
-    //     mount(ref.current);
-    // });
+    useEffect(() => {
+        // mount(ref.current);
+    });
 
-    return <div ref={ref}>abc</div>
+    return <div ref={ref}>bbs</div>
 }
