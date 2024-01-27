@@ -14,7 +14,8 @@ const prodConfig = {
             name: 'markting',
             filename: 'remoteEntry.js',
             exposes: {
-                './app': './src/bootstrap'
+                './app': './src/bootstrap',
+                './Landing': './src/components/Landing'
             },
             shared: packageJson.dependencies
         }),

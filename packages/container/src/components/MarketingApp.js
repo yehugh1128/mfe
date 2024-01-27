@@ -1,6 +1,6 @@
-import { mount } from 'marketing/app';
+// import { mount } from 'marketing/app';
+import Landing from 'marketing/Landing';
 import React, { useRef, useEffect } from 'react';
-console.log(mount);
 export default () => {
     const ref = useRef(null);
 
@@ -8,5 +8,5 @@ export default () => {
         // mount(ref.current);
     });
 
-    return <div ref={ref}>bbs</div>
+    return <div ref={ref}><Landing /></div>
 }
