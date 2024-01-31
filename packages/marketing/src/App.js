@@ -10,16 +10,17 @@ const generateClassName = createGenerateClassName({
 });
 
 export default ({ history }) => {
+    console.log('a',history);
     return <div>
         <StylesProvider generateClassName={generateClassName}>
-            {/* <Router history={history} location={history.location} navigator={history}> */}
-            <MemoryRouter initialEntries={['/']}>
+            <Router history={history} location={history.location} navigator={history}>
+            {/* <MemoryRouter initialEntries={['/']}> */}
                 <Routes>
                     <Route exact path='/' Component={Landing}></Route>
                     <Route path='/pricing' Component={Pricing}></Route>
                 </Routes>
-            </MemoryRouter>
-            {/* </Router> */}
+            {/* </MemoryRouter> */}
+            </Router>
         </StylesProvider>
     </div>
 }
