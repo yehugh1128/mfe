@@ -9,16 +9,18 @@ export default () => {
     const currentLocation = useLocation();
     const history = createMemoryHistory();
     useEffect(() => {
+        //container 及 组件 的路由行为都会执行
         history.push(currentLocation.pathname);
         mount(ref.current, {
             onNavigate: ({ location }) => {
+                // 只有组件路由行为才会执行
                 // if (currentLocation.pathname !== location.pathname){
-                    navigate(location.pathname);
+                navigate(location.pathname);
                 // }         
             },
             history
         });
-    },[currentLocation.pathname]);
+    }, [currentLocation.pathname]);
 
     return <div ref={ref}></div>
 }
