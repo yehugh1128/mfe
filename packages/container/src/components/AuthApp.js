@@ -1,4 +1,4 @@
-import { mount } from 'marketing/MarketingApp';
+import { mount } from 'auth/AuthApp';
 import React from 'react';
 import Common from './Common';
 
