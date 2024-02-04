@@ -11,9 +11,10 @@ const mount = (el, { onNavigate, history }) => {
         el
     );
 };
+
 if (process.env.NODE_ENV === 'development') {
     const defaultHistory = createBrowserHistory();
-    const devRoot = document.querySelector('#_auth-dev-root');
+    const devRoot = document.querySelector('#_dev-root');
     let pathname = '';
     if (devRoot) {
         mount(devRoot, {

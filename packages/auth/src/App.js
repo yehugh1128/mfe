@@ -9,18 +9,13 @@ const generateClassName = createGenerateClassName({
     productionPrefix: 'au',
 });
 
-const routes = [
-    { path: '/', componnet: Signin },
-    { path: '/auth/signin', componnet: Signin },
-    { path: '/auth/signup', componnet: Signup },
-];
-
 export default ({ history }) => {
     return <div>
         <StylesProvider generateClassName={generateClassName}>
-            <Router history={history} location={history.location} navigator={history} navigationType='PUSH'>
+            <Router history={history} location={history.location} navigator={history}>
                 <Routes>
-                    {routes.map((route) => <Route path={route.path} Component={route.componnet} key={route.path} />)}
+                    <Route exact path='/auth/signin' Component={Signin}></Route>
+                    <Route path='/auth/signup' Component={Signup}></Route>
                 </Routes>
             </Router>
         </StylesProvider>

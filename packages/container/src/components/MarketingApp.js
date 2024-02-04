@@ -1,26 +1,7 @@
 import { mount } from 'marketing/MarketingApp';
-import React, { useRef, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
+import React from 'react';
+import Common from './Common';
 
 export default () => {
-    const ref = useRef(null);
-    const navigate = useNavigate();
-    const currentLocation = useLocation();
-    const history = createMemoryHistory();
-    useEffect(() => {
-        //container 及 组件 的路由行为都会执行
-        history.push(currentLocation.pathname);
-        mount(ref.current, {
-            onNavigate: ({ location }) => {
-                // 只有组件路由行为才会执行
-                // if (currentLocation.pathname !== location.pathname){
-                navigate(location.pathname);
-                // }         
-            },
-            history
-        });
-    }, [currentLocation.pathname]);
-
-    return <div ref={ref}></div>
+    return <Common mount={mount} />
 }
