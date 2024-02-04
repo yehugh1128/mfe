@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-export default ({mount}) => {
+export default ({ mount, callback }) => {
     const ref = useRef(null);
     const navigate = useNavigate();
     const currentLocation = useLocation();
@@ -17,7 +17,8 @@ export default ({mount}) => {
                 navigate(location.pathname);
                 // }         
             },
-            history
+            history,
+            callback
         });
     }, [currentLocation.pathname]);
 

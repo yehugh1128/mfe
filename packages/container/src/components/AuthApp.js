@@ -2,6 +2,6 @@ import { mount } from 'auth/AuthApp';
 import React from 'react';
 import Common from './Common';
 
-export default () => {
-    return <Common mount={mount} />
+export default ({ onSignIn }) => {
+    return <Common mount={mount} callback={onSignIn} />
 }

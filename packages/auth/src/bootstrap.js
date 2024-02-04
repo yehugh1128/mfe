@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createBrowserHistory } from 'history';
 import App from './App';
-const mount = (el, { onNavigate, history }) => {
+const mount = (el, { onNavigate, history, callback }) => {
     if (onNavigate && history) {
         history.listen(onNavigate);
     }
     ReactDOM.render(
-        <App history={history} />,
+        <App history={history} onSignIn={callback} />,
         el
     );
 };
